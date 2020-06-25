@@ -1,0 +1,75 @@
+For combinating string in JSX we can use template string as JS expression
+{`My name is: ${person.firstName} ${person.lastName}`}
+
+### Components
+
+Component Nesting: Components within component
+Component Reusability: Easily reusable in same app or another app
+Component Configuration: Passing configration to component to render accordingly
+
+### Semantic UI 
+Adding Semantic UI in public/css
+And link it to index.html
+It will be applied to each and every page of SPA of react
+
+<div className="ui container comments">
+    <div className="comment">
+        <a href="#" className="avatar">
+            <img src="" alt="avatar" />
+        </a>
+        <div className="content">
+            <a href="#" className="author">
+                Sam
+            </a>
+            <div className="metadata">
+                <span className="date">Today at 6:00 PM</span>
+            </div>
+            <div className="text">Nice blog post! </div>
+        </div>
+    </div>
+</div>
+
+
+To add css to only one component we then use
+npm i semantic-ui
+It will add semantic folder in src
+
+npm i semantic-ui-react
+
+npm i semantic-ui-css
+import 'semantic-ui-css/semantic-min.css'
+
+### Material UI
+npm install @material-ui/core
+
+### Ant Desing
+npm install antd
+
+### Faker JS
+npm i faker
+
+import faker from 'faker'; 
+
+faker.js contains a super useful generator method 
+Faker.fake for combining faker API methods using a mustache string format.
+
+console.log(faker.fake("{{name.suffix}}, {{name.firstName}} {{name.lastName}}"));
+This will interpolate the format string with the value of methods name.lastName(), name.firstName(), and name.suffix()
+
+faker.image.avatar();
+
+### Props (Properties)
+Passing data from parent component to child component
+To customize or configure child component
+
+<CommentDetail author="Alex"/>
+<CommentDetail author={faker.name.firstName()}/>
+Data can be from stae also
+
+In CommentDetail component props object contains all the attr
+passed in JSX to child component
+
+props.children contain inner part of passed in child component
+<CommentDetail author="Alex">Premium Account</CommentDetail>
+props.children is special reserved by react
+Content between tag

@@ -1,0 +1,127 @@
+### Getting Started
+
+Installing create-react-app 
+npm i -g create-react-app
+
+Creating new react app
+create-react-app <projectName>
+
+Alternatively
+
+npx create-react-app <projectName>
+without installing create-react-app
+
+
+### Folder Structure
+
+src - Source Code
+public - Static files
+node_modules - Dependencies
+package.json - Config for dependencies
+package-lock.json - Exact version of dependencies
+
+### Render on Web
+Import react(React) and react-dom(ReactDOM)
+Create react component
+Render that component on web
+
+### JSX
+
+
+const App = () => {
+    return <div className="App"></div>;
+};
+
+babeljs.io - Try it out (Presets react)
+
+"use strict";
+// ('use strict');
+
+const App = () => {
+    return /*#__PURE__*/ React.createElement(
+        'div',
+        {
+            className: 'App',
+        },
+        'Hi, there'
+    );
+};
+
+ie <div className="App">Hi, there </div> 
+is converted to JS code
+React.createElement("div",{ className: "App" }, "Hi, there")
+
+const App = () => {
+    return (
+        <div className="App">
+            <ul>
+                <li>Hi, there</li>
+                <li>How are you? </li>
+            </ul>
+        </div>
+    );
+};
+
+"use strict";
+
+const App = () => {
+    return React.createElement(
+        'div',
+        {
+            className: 'App',
+        },
+        React.createElement(
+            'ul',
+            null,
+            React.createElement('li', null, 'Hi, there'),
+            React.createElement('li', null, 'How are you? ')
+        )
+    );
+};
+
+### JSX vs HTML
+
+# class and className
+As class is reserved word in JS
+so react uses className 
+Similar if for in label
+use htmlFor instead of for
+
+# {} used to write JS expressions
+Usually used to add variable and method calls
+
+Use it for variables and eventHandler method calls only
+Limitations:
+Multi line expressions cann't be used
+Use ternary operators to get around limitations of if else statement
+It does render Boolean values
+Using array then it will automatically convert it into string (no need of explicit join(''))
+
+const buttonText = 'Click Me';
+const buttonBool = true;
+const buttonArray = ['Click', 'Me', 'In', 'It'];
+const buttonObject = {
+    name: 'button',
+    text: 'Click Me',
+};
+{buttonText} will work fine as variable
+{buttonBool} doesn't render any output
+{buttonArray.join(' ')} implicit join is also present with ''
+{buttonObject.text}
+
+{undefined} doesn't render any output or function that doesn't return anything
+
+# {/* */}
+Comment in JSX
+Creating block and then add JS comment 
+
+# Adding custom styling to an element
+<div style="background-color:red; color: white"> </div>
+style require JS object
+
+<div style={ { backgroundColor : 'red', color: 'white' } } ></div>
+<div style={ { 'background-color': 'red', 'color': 'white' } }></div>
+
+{ key: value } pair of JS
+
+
