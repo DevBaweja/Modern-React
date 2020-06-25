@@ -1,0 +1,19 @@
+Installing create-react-app 
+npm i -g create-react-app
+
+Creating new react app
+create-react-app <projectName>
+
+Alternatively
+
+npx create-react-app <projectName>
+without installing create-react-app
+
+
+Folder Structure
+
+src - Source Code
+public - Static files
+node_modules - Dependencies
+package.json - Config for dependencies
+package-lock.json - Exact version of dependencies
